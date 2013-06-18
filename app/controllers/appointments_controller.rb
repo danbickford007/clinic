@@ -21,11 +21,7 @@ class AppointmentsController < ApplicationController
   def new
     @appointment = Appointment.new
     @customers = Customer.all
-    if @customers.any?
-      @pets = @customers.first.pets
-    else
-      @pets = []
-    end
+    @pets = Pet.from_customer(@customers)
     @vets = Vet.all
     respond_to do |format|
       format.html # new.html.erb
