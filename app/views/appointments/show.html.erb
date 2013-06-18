@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Visit date:</b>
+  <%= @appointment.visit_date.strftime("%m/%d/%y %H:%M") %>
+</p>
+
+<p>
+  <b>Pet:</b>
+  <%= @appointment.pet.name %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%= @appointment.customer.name %>
+</p>
+
+<p>
+  <b>Reminder:</b>
+  <%= @appointment.reminder %>
+</p>
+
+<p>
+  <b>Reason for visit:</b>
+  <%= @appointment.reason_for_visit %>
+</p>
+
+
+<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back', appointments_path %>

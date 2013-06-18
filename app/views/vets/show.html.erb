@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @vet.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @vet.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @vet.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @vet.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @vet.zip %>
+</p>
+
+<p>
+  <b>Degree:</b>
+  <%= @vet.degree %>
+</p>
+
+<p>
+  <b>Years:</b>
+  <%= @vet.years %>
+</p>
+
+<p>
+<b>Appointments:</b><br />
+  <% @vet.appointments.each do |app| %>
+    <%= app.visit_date.strftime("%m/%d/%y %H:%M") %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_vet_path(@vet) %> |
+<%= link_to 'Back', vets_path %>

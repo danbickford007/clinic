@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <b>Pets:</b><br />
+  <% @customer.pets.each do |pet| %>
+    <%= link_to pet.name, pet_path(pet.id) %><br />
+  <% end %>
+</p>
+
+<p>
+  <b>Appointments:</b>
+  <% @customer.appointments.each do |app| %>
+    <%= app.visit_date.strftime("%h/%m/%y %H:%M") %><br />
+  <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %><br />
+<%= link_to 'New Pet', new_pet_path(:customer_id=>@customer.id) %>
